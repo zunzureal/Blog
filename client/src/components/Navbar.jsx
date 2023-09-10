@@ -15,7 +15,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav>
+    <nav className=" container">
       <ul className="flex justify-between px-3 pt-3">
         <li>
           <Link to="/">Home</Link>

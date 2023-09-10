@@ -5,6 +5,7 @@ import Login from "./components/Login";
 import SinglePage from "./components/SinglePage";
 import App from "./App";
 import { getUser } from "../service/authorize";
+import Dashboard from "./components/AdminDashboard/Dashboard";
 const MyRoute = () => {
   const isLoggedIn = getUser(); // ตรวจสอบว่ามีการ login หรือไม่
   return (
@@ -26,6 +27,7 @@ const MyRoute = () => {
         )}
 
         <Route path="/login" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
   );
