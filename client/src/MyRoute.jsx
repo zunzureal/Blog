@@ -13,19 +13,8 @@ const MyRoute = () => {
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/box/:slug" element={<SinglePage />} />
-
-        {isLoggedIn ? (
-          <>
-            <Route path="/create" element={<Form />} />
+        <Route path="/create" element={<Form />} />
             <Route path="/box/edit/:slug" element={<Edit />} />
-          </>
-        ) : (
-          <>
-            <Route path="/create" element={<Navigate to="/login" />} />
-            <Route path="/box/edit/:slug" element={<Navigate to="/login" />} />
-          </>
-        )}
-
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>

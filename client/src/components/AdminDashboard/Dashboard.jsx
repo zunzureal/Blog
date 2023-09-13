@@ -4,7 +4,9 @@ import Swal from "sweetalert2";
 import { getUser, getToken } from "../../../service/authorize";
 
 import { Link } from "react-router-dom";
-import BasicBars from "./Chart";
+import Navbar from "./Navbar";
+
+
 
 function Dashboard() {
   const [boxes, setBoxes] = useState([]);
@@ -50,9 +52,9 @@ function Dashboard() {
       });
   };
   return (
-    <div className="container">
-      <div>
-        <BasicBars />
+    <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+      <div className=" pb-3">
+       <Navbar/>
       </div>
       <div className="relative overflow-x-auto">
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -64,10 +66,10 @@ function Dashboard() {
               <th scope="col" className="px-6 py-3">
                 Title
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-6 py-3 hidden lg:table-cell">
                 Date
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-6 py-3 hidden lg:table-cell">
                 Author
               </th>
               <th scope="col" className="px-6 py-3">
@@ -85,13 +87,13 @@ function Dashboard() {
                   scope="row"
                   className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                 >
-                  <img src={box.image} alt="" className=" w-24" />
+                  <img src={box.image} alt="" className=" w-16 lg:h-16" />
                 </th>
                 <td className="px-6 py-4">{box.slug}</td>
-                <td className="px-6 py-4">
+                <td className="px-6 py-4 hidden lg:table-cell">
                   <p>at {new Date(box.createdAt).toLocaleString()}</p>
                 </td>
-                <td className="px-6 py-4">{box.author}</td>
+                <td className="px-6 py-4 hidden lg:table-cell">{box.author}</td>
                 <td className="px-6 py-4">
                   {getUser() && (
                     <div className=" flex">

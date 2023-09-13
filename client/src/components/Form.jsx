@@ -6,7 +6,7 @@ import { useState } from "react";
 import "../index.css";
 import { useNavigate } from "react-router-dom";
 import { getToken, getUser } from "../../service/authorize";
-import Navbar from "./Navbar";
+import Navbar from "../components/AdminDashboard/Navbar";
 const Form = () => {
   const [formData, setFormData] = useState({
     title: "",

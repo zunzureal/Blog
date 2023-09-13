@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 
 const App = () => {
   return (
-    <div>
+    <div className=" container lg:px-8">
       <Navbar />
       <Home />
     </div>
